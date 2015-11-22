@@ -36,6 +36,11 @@ prime([H|T],[HP|_],P)  when HP * HP > H                -> prime(T,[H|P]);
 prime([_|T],_,P)                                       -> prime(T,P).
 
 is_prime(N)   -> is_prime(N, 2).
-is_prime(N,N) -> true;
+%is_prime(N,N) -> true;
 is_prime(N,M) when N rem M =:= 0 -> false;
-is_prime(N,M) -> is_prime(N,M+1). 
+is_prime(N,M) -> 
+    case (M+1) < math:sqrt(N) of
+        true -> is_prime(N,M+1)
+        ;_   -> true
+    end.
+
