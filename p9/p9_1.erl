@@ -1,15 +1,12 @@
 #!/usr/bin/env escript
 %% -*- erlang -*-
-%%! -smp enable -sname p9
+%%! -smp enable -sname p9_1
 % vim:syn=erlang
 
 -mode(compile).
 
 main(_) ->
-    %D = 1000,
-    %Answer = lists:last([ X*Y*(D-X-Y) || X <- lists:seq(1, D), Y <- lists:seq(1, D), X*X + Y*Y =:= (D-X-Y)*(D-X-Y)]),
-    Answer = a(1),
-    io:format("Answer: ~p ~n", [Answer]).
+    io:format("Answer: ~p ~n", [a(1)]).
 
 a(X) when X < 1000 ->
     case b(X,X) of
