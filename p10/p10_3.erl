@@ -6,7 +6,7 @@
 -mode(compile).
 
 main(_) ->
-    N = 2000000,
+    N = 20000000,
     ets:new(comp, [public, named_table]),
     ets:new(prim, [public, named_table]),
     composite(N),
