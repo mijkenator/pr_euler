@@ -6,8 +6,7 @@
 -mode(compile).
 
 main(_) ->
-    io:format("Answer: ~p ~n", [lists:sum(lists:flatten([fr(X) || X<-lists:seq(1,10000)]))]),
-    io:format("_:~p ~n", [d(220)]).
+    io:format("Answer: ~p ~n", [lists:sum(lists:flatten([fr(X) || X<-lists:seq(1,10000)]))]).
 
 fr(X) ->
     D1 = d(X),
@@ -17,7 +16,7 @@ fr(X) ->
     end.
 
 d(0) -> 0;
-d(N) -> lists:sum([X||X<-lists:seq(1,N-1), N rem X =:= 0]).
+d(N) -> lists:sum([X||X<-lists:seq(1,N div 2 + 1), N rem X =:= 0]).
 
 
 

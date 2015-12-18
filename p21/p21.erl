@@ -16,7 +16,7 @@ fr(X) ->
     end.
 
 d(0, _, _)                    -> [];
-d(N, N, A)                    -> A;
+d(N, M, A) when M > N div 2+1 -> A;
 d(N, M, A) when N rem M =:= 0 -> d(N, M+1, [M|A]);
 d(N, M, A)                    -> d(N, M+1, A).
 
