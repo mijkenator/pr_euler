@@ -10,7 +10,6 @@ main(_) ->
     ets:new(comp, [public, named_table, {write_concurrency, true} ]),
     ets:new(prim, [public, named_table, {write_concurrency, true}]),
     composite_mc(N),
-    io:format("com ok ~n", []),
     primes_mc(N),
     Answer = lists:foldl(fun({E,_},A)-> E+A end, 0, ets:tab2list(prim)),
     io:format("Answer: ~p ~n", [Answer]).

@@ -20,7 +20,7 @@ remove_multiples_of(Number,Candidates,SearchList) ->
     {ordsets:subtract(Candidates, RemoveList), ordsets:subtract(NewSearchList, RemoveList)}.
  
 main(_) ->      
-    N = 2000000,
+    N = 20000000,
     CandidateList = lists:seq(3,N,2),
     Candidates = ordsets:from_list(CandidateList),
     ResultSet = ordsets:add_element(2,sieve(Candidates,Candidates,ordsets:new(),N)),
