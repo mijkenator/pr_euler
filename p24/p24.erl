@@ -1,4 +1,4 @@
-#!/usr/bin/env escript
+!/usr/bin/env escript
 %% -*- erlang -*-
 %%! -smp enable -sname p24
 % vim:syn=erlang

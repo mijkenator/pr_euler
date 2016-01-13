@@ -54,17 +54,22 @@ def all_factors(n):
    elts = sorted(set(f))
    numelts = len(elts)
    #print "all_factors: %s ::: %s %s %s" % (n, f, elts, numelts)
-   def gen_inner(i): 
+   def gen_inner(i):
+       #print "GI %s" % i
        if i >= numelts:
            yield 1
            return
        thiselt = elts[i]
        thismax = f.count(thiselt)
        powers = [1]
+       #print "GI i:%s thiselt:%s thismax:%s " % (i, thiselt, thismax)
        for j in xrange(thismax):
            powers.append(powers[-1] * thiselt)
+       #print "GI i:%s powers:%s" % (i, powers)
        for d in gen_inner(i+1):
+           #print "GI i:%s d:%s powers:%s" % (i, d, powers)
            for prime_power in powers:
+               #print "GI i:%s d:%s pp:%s ret pp*d:%s" % (i, d, prime_power, prime_power*d)
                yield prime_power * d
    for d in gen_inner(0):
        yield d
