@@ -12,6 +12,9 @@ def m(l):
 
     return list(merge(left, right))
 
-l = [random.randint(1,10000) for _ in range(1,100000)]
+l = [random.randint(1,10000) for _ in range(1,5000000)]
 #print(l)
-print(m(l))
+#print(m(l))
+
+m(l)
+print("Done")

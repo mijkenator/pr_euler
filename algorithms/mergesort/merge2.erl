@@ -1,6 +1,6 @@
 #!/usr/bin/env escript
 %% -*- erlang -*-
-%%! -smp enable -sname p9
+%%! -smp enable -sname p9 +B
 % vim:syn=erlang
 
 -mode(compile).
